@@ -19,8 +19,8 @@ jobs:
           username: ${{ secrets.GCP_USERNAME }}
           key: ${{ secrets.GCP_SSH_KEY }}
           source: "."
-          target: "root/chatbotai"
-          rm: true # Optional: remove existing files in target before copy
+          target: "~/chatbotai"
+          rm: true
 
       - name: Deploy to VM via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.GCP_USERNAME }}
           key: ${{ secrets.GCP_SSH_KEY }}
           script: |
-            cd root/chatbotai
+            cd ~/chatbotai
             docker compose up --build -d
