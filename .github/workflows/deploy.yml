@@ -30,4 +30,5 @@ jobs:
           key: ${{ secrets.GCP_SSH_KEY }}
           script: |
             cd ~/chatbotai
+            echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" > .env
             docker compose up --build -d

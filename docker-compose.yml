@@ -1,10 +1,9 @@
 services:
-  web:
+  chatbot:
     build: .
     ports:
       - "8000:8000"
     env_file:
       - .env
     volumes:
-      - ./db.sqlite3:/app/db.sqlite3
-    restart: always
+      - .:/app

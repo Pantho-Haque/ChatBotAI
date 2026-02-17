@@ -26,7 +26,7 @@ def initialize(request):
         """
         
         message_for_topic_name = f"""
-            give me a topic name based on this content:
+            give me only one topic name based on this content:
             {content}
             topic name should be short and within one word to 3 words.
         """
